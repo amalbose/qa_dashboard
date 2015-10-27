@@ -5,7 +5,7 @@ from .models import QATestPlan
 from .forms import QATestPlanForm
 
 class QATestPlanAdmin(admin.ModelAdmin):
-    list_display = ["__str__","createdTime", "owner"]
+    list_display = ["__str__","created_time", "owner"]
 #    class Meta:
 #        model = QATestPlan
     form = QATestPlanForm
