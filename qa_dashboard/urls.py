@@ -24,13 +24,13 @@ from projectadmin import views as pViews
 
 urlpatterns = [
                
-    url(r'^login/', pViews.login, name='login'),
-    url(r'^logout/', pViews.logout, name='logout'),
-    url(r'^register/', pViews.register, name='register'),
+    url(r'^$',              pViews.home,        name='home'),
+    url(r'^login/',         pViews.login,       name='login'),
+    url(r'^logout/',        pViews.logout,      name='logout'),
+    url(r'^register/',      pViews.register,    name='register'),
     
-    url(r'^restricted/', pViews.restricted, name='restricted'),
+    url(r'^restricted/',    pViews.restricted,  name='restricted'), # FIXME
 
-    url(r'^$', pViews.home, name='home'),
     
-    url(r'^admin/', include(admin.site.urls)),
+    url(r'^admin/',     include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
