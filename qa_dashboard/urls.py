@@ -28,6 +28,7 @@ urlpatterns = [
     url(r'^login/', pViews.login, name='login'),
     url(r'^logout/', pViews.logout, name='logout'),
     url(r'^register/', pViews.register, name='register'),
+    
     url(r'^restricted/', pViews.restricted, name='restricted'),
 
     url(r'^$', pViews.home, name='home'),
