@@ -101,3 +101,5 @@ $RECYCLE.BIN/
 *.lnk
 *.sqlite3
 /static_root/
+/help
+/tmpmigrate.bat
