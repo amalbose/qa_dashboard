@@ -24,7 +24,6 @@ from projectadmin import views as pViews
 
 urlpatterns = [
                
-    url(r'^projectadmin/', pViews.home),
     url(r'^login/', pViews.login, name='login'),
     url(r'^logout/', pViews.logout, name='logout'),
     url(r'^register/', pViews.register, name='register'),

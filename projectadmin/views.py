@@ -11,7 +11,7 @@ from .forms import UserForm, UserProfileForm
 
 def home(request):
     context = {
-    "title" : "Project Admin"
+    "title" : common.APPLICATION_NAME
     }
     return render(request,"home.html" , context);
 
@@ -38,6 +38,7 @@ def register(request):
         profile_form = UserProfileForm()
 
     context = {
+               'title' : common.APPLICATION_NAME + ' | Register',
                'user_form': user_form, 
                'profile_form': profile_form, 
                'registered': registered
@@ -65,7 +66,7 @@ def login(request):
             return HttpResponse("Invalid login details supplied.")
 
     else:
-        return render(request, 'login.html', { 'title' : common.APPLICATION_NAME })
+        return render(request, 'login.html', { 'title' : common.APPLICATION_NAME + ' | Login' })
     
 @login_required
 def logout(request):
