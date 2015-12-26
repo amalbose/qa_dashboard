@@ -7,7 +7,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User)
 
     # The additional attributes we wish to include.
-    supervisiorId   = models.ForeignKey(User, related_name='+',blank=True, null=True)
+    supervisorId    = models.ForeignKey(User, related_name='+',blank=True, null=True, verbose_name="Supervisor")
     team            = models.CharField(max_length=200);
     empId           = models.CharField(max_length=10);
     
