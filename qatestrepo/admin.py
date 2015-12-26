@@ -11,4 +11,4 @@ class QATestPlanAdmin(admin.ModelAdmin):
     form = QATestPlanForm
         
 
-admin.site.register(QATestPlan, QATestPlanAdmin)
+# admin.site.register(QATestPlan, QATestPlanAdmin)

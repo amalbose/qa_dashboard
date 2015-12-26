@@ -4,6 +4,13 @@ from .forms import QATestPlanForm
 
 # Create your views here.
 def home(request):
+    context = {
+    "title" : "Create new testplan"
+    }
+    return render(request,"home.html" , context);
+
+
+def tp(request):
     form = QATestPlanForm(request.POST or None);
     
     context = {
