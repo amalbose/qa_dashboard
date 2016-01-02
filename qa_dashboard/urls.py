@@ -20,17 +20,22 @@ from django.conf.urls.static import static
 from django.conf.urls import include, url
 from django.contrib import admin
 
-from projectadmin import views as pViews
+from projectadmin import views as pView
+from qatestrepo import views as tpView
 
 urlpatterns = [
                
-    url(r'^$',              pViews.home,        name='home'),
-    url(r'^login/',         pViews.login,       name='login'),
-    url(r'^logout/',        pViews.logout,      name='logout'),
-    url(r'^register/',      pViews.register,    name='register'),
+    url(r'^$',              pView.home,        name='home'),
+    url(r'^login/',         pView.login,       name='login'),
+    url(r'^logout/',        pView.logout,      name='logout'),
+    url(r'^register/',      pView.register,    name='register'),
     
-    url(r'^restricted/',    pViews.restricted,  name='restricted'), # FIXME
+    url(r'^restricted/',    pView.restricted,  name='restricted'), # FIXME
 
-    
+    url(r'^testplan/$',         tpView.addTestPlan,     name='testplan'),
+#     url(r'^testplan/(?P<pk>\d+)',  tpView.UpdateTestPlanView.as_view() ,    name='editTestPlan'),
+    url(r'^testplans/',         tpView.showTestPlans,   name='testplans'),
+    url(r'^testplan/(?P<id>\d+)/$',  tpView.editTestPlan ,    name='editTestPlan'),
+
     url(r'^admin/',     include(admin.site.urls)),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
