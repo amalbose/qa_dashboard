@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load crispy_forms_tags %}
+{% block content %}
+	<button id="createTPBtn" class="btn btn-default pull-right">Create TestPlan</button>
+	<h1>{{ title }}</h1><br/>
+	<div class="table-responsive col-md-8 col-md-offset-2">
+	 <form action="" method="post">{% csrf_token %}
+        {{ form|crispy }}
+        <input type="submit" value="Update" class="btn btn-primary"/>
+    </form>
+	</div>
+{% endblock content %}
+
+{% block footer-content %}
+    <script src="{% static "js/jquery.tablesorter.min.js" %}"></script>
+    <script type="text/javascript" >
+    	$(document).ready(function() 
+		    { 
+		        $("#testPlanTable").tablesorter(); 
+		    } 
+		);
+		
+		$( "#createTPBtn" ).click(function() {
+		  window.location.href = "/testplan";
+		});
+    </script>
+{% endblock footer-content %}

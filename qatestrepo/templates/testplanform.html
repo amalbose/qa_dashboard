@@ -1,9 +1,14 @@
-<html>
-    <head><title>{{ title }}</title></head>
-    <h1>{{title}}</h1>
-    <form method="POST" action="">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="Submit" value="Create"/>
-    </form>
-</html>
+<!DOCTYPE html>
+{% extends "base.html" %}
+{% load crispy_forms_tags %}
+{% block content %}
+    <div class="col-md-8 col-md-offset-2">
+		<h1>{{ title }}</h1>
+	    <br/>
+	    <form method="POST" action="">
+	    {% csrf_token %}
+	    {{ form|crispy }}
+	    <input type="Submit" class="btn btn-primary btn-lg" value="Create Test Plan"/>
+	    </form>
+    </div>
+{% endblock content %}
